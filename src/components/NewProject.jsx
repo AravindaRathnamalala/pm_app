@@ -23,8 +23,8 @@ export default function NewProject({ onAdd, onCancel }) {
     } else {
       onAdd({
         title: enteredTitle,
-        description: descriptionRef,
-        dueDate: dueDateRef,
+        description: enteredDescription,
+        dueDate: enteredDueDate,
       });
     }
   }
@@ -32,14 +32,23 @@ export default function NewProject({ onAdd, onCancel }) {
   return (
     <>
       <Modal ref={modalRef} buttonCaption={"Okay"}>
-        <h2 className='text-xl font-bold text-stone-700 mt-4 my-4'>Invalid input</h2>
-        <p className="text-stone-600 mb-4">Opps... Looks like you forgot to enter the vale</p>
-        <p className="text-stone-600 mb-4">Please make sure you enter all inputs</p>
+        <h2 className="text-xl font-bold text-stone-700 mt-4 my-4">
+          Invalid input
+        </h2>
+        <p className="text-stone-600 mb-4">
+          Opps... Looks like you forgot to enter the vale
+        </p>
+        <p className="text-stone-600 mb-4">
+          Please make sure you enter all inputs
+        </p>
       </Modal>
       <div className="w-[35rem] mt-16">
         <menu className="flex items-center justify-end gap-4 my-4">
           <li>
-            <button className="text-stone-800 hover:text-stone-950" onClick={onCancel}>
+            <button
+              className="text-stone-800 hover:text-stone-950"
+              onClick={onCancel}
+            >
               Cancel
             </button>
           </li>
